@@ -1,0 +1,39 @@
+﻿<Window x:Class="WPFBddEditeur.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFBddEditeur"
+        mc:Ignorable="d"
+        Title="BDD Editeur" Height="450" Width="800">
+	<Grid Grid.Column="0" RenderTransformOrigin="0.458,0.491">
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="6*"/>
+
+		</Grid.ColumnDefinitions>
+		<Grid Grid.Column="0">
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+
+			<Button Name="userBt"  FontSize="20" Grid.Row="0" Click="userBt_Click">Utilisateurs</Button>
+			<Button Name="bookBt" FontSize="20" Grid.Row="1" Click="bookBt_Click">Livres</Button>
+			<Button Name="authorBt" FontSize="20" Grid.Row="2" Click="authorBt_Click">Auteurs</Button>
+			<Button Name="priceBt" FontSize="20" Grid.Row="3" Click="priceBt_Click">Prix</Button>
+			<Button Name="logoutBt" FontSize="20" Grid.Row="4" Click="logoutBt_Click">Logout</Button>
+		</Grid>
+       
+        <Grid Grid.Column="1">
+            
+                
+           
+        </Grid>
+        <ContentControl x:Name="mainContent" Grid.Column="1" Grid.RowSpan="5" Width="Auto"/>
+    </Grid>
+</Window>
