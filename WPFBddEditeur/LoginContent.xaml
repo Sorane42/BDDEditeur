@@ -7,12 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Label Content="Page de connexion" HorizontalAlignment="Left" Margin="333,114,0,0" VerticalAlignment="Top" Height="34" Width="114"/>
-        <TextBox x:Name="loginText" HorizontalAlignment="Left" Height="23" Margin="402,153,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Label Content="Login :" HorizontalAlignment="Left" Margin="260,149,0,0" VerticalAlignment="Top" Height="34" Width="114"/>
-        <Label Content="Mot de passe :" HorizontalAlignment="Left" Margin="260,188,0,0" VerticalAlignment="Top" Height="34" Width="114"/>
-        <Button x:Name="connectBt" Content="Se connecter" HorizontalAlignment="Left" Margin="333,253,0,0" VerticalAlignment="Top" Width="93" Height="31" Click="connectBt_Click"/>
-        <PasswordBox x:Name="mdpText" HorizontalAlignment="Left" Margin="402,193,0,0" VerticalAlignment="Top" Width="120" Height="19"/>
+        <Label Content="Page de connexion" HorizontalAlignment="Left" Margin="215,115,0,0" VerticalAlignment="Top" Height="34" Width="114"/>
+        <TextBox x:Name="loginText" HorizontalAlignment="Left" Height="23" Margin="289,153,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Label Content="Login :" HorizontalAlignment="Left" Margin="170,149,0,0" VerticalAlignment="Top" Height="34" Width="114"/>
+        <Label Content="Mot de passe :" HorizontalAlignment="Left" Margin="170,188,0,0" VerticalAlignment="Top" Height="34" Width="114"/>
+        <Button x:Name="connectBt" Content="Se connecter" HorizontalAlignment="Left" Margin="223,242,0,0" VerticalAlignment="Top" Width="93" Height="31" Click="connectBt_Click"/>
+        <PasswordBox x:Name="mdpText" HorizontalAlignment="Left" Margin="289,196,0,0" VerticalAlignment="Top" Width="120" Height="19"/>
 
     </Grid>
 </UserControl>

@@ -26,7 +26,8 @@
 			<Button Name="bookBt" FontSize="20" Grid.Row="1" Click="bookBt_Click">Livres</Button>
 			<Button Name="authorBt" FontSize="20" Grid.Row="2" Click="authorBt_Click">Auteurs</Button>
 			<Button Name="priceBt" FontSize="20" Grid.Row="3" Click="priceBt_Click">Prix</Button>
-			<Button Name="logoutBt" FontSize="20" Grid.Row="4" Click="logoutBt_Click">Logout</Button>
+            <Button Name="logoutBt" FontSize="20" Grid.Row="4" Click="logoutBt_Click">
+                <Image Source="puissance.png"></Image></Button>
 		</Grid>
        
         <Grid Grid.Column="1">
