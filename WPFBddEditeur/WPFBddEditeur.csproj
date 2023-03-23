@@ -61,11 +61,15 @@
     <Compile Include="AuteurContent.xaml.cs">
       <DependentUpon>AuteurContent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CValidateByRegex.cs" />
     <Compile Include="livre.xaml.cs">
       <DependentUpon>livre.xaml</DependentUpon>
     </Compile>
     <Compile Include="LoginContent.xaml.cs">
       <DependentUpon>LoginContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ParametreBDD.xaml.cs">
+      <DependentUpon>ParametreBDD.xaml</DependentUpon>
     </Compile>
     <Compile Include="PrixContent.xaml.cs">
       <DependentUpon>PrixContent.xaml</DependentUpon>
@@ -101,6 +105,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ParametreBDD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PrixContent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

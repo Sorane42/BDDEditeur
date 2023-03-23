@@ -28,8 +28,8 @@ namespace WPFBddEditeur
             InitializeComponent();
             try
             {
-                //bdd = new BddEditeur(Properties.Settings.Default.AdrIpServeur, Properties.Settings.Default.Port, Properties.Settings.Default.Utilisateur, Properties.Settings.Default.Mdp);
-                bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
+                bdd = new BddEditeur(Properties.Settings.Default.AdrIpServeur, Properties.Settings.Default.Port, Properties.Settings.Default.Utilisateur, Properties.Settings.Default.Mdp);
+                //bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
                
             }
             catch (Exception ex)
@@ -68,6 +68,15 @@ namespace WPFBddEditeur
                 MessageBox.Show(ex.Message, "Login incorrect");
             }
         }
-    
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ParametreBDD parametre = new ParametreBDD();
+            parametre.Show();
+           
+          
+   
+            }
+        }
     }
 }
