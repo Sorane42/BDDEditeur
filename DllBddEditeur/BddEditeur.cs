@@ -38,6 +38,15 @@ namespace DllBddEditeur
             }
             catch { throw; }
         }
+
+        public List<User> getallUsers()
+        {
+            try
+            {
+                return bdd.Users.ToList();
+            }
+            catch { throw; }
+        }
         public List<Booklist> getallBooks()
         {
             try
@@ -65,6 +74,31 @@ namespace DllBddEditeur
             }
             catch { throw; }
         }
+
+        public bool UserExiste(string isbn)
+        {
+            try
+            {
+                User us = bdd.Users.Where(s => s.Login.ToLower() == isbn.ToLower()).FirstOrDefault();
+                if (us != null)
+                    return true;
+                return false;
+            }
+            catch { throw; }
+        }
+
+        public bool BookExiste(string isbn)
+        {
+            try
+            {
+                Booklist book = bdd.Booklists.Where(s => s.ISBN.ToLower() == isbn.ToLower()).FirstOrDefault();
+                if (book != null)
+                    return true;
+                return false;
+            }
+            catch { throw; }
+        }
+
         public bool addAuthor(string n, string p, string isb)
         {
             bool Result;
@@ -98,6 +132,26 @@ namespace DllBddEditeur
             catch { Result = false; }
             return Result;
         }
+        public bool DeleteUser(string login)
+        {
+            bool result;
+            try
+            {
+                User utilisateur = bdd.Users.FirstOrDefault(u => u.Login == login);
+                if (utilisateur != null)
+                {
+                    bdd.Users.DeleteOnSubmit(utilisateur);
+                    bdd.SubmitChanges();
+                    result = true;
+                }
+                else
+                {
+                    result = false;
+                }
+            }
+            catch{result = false;}
+            return result;
+        }
         public bool AddBook(string isb, string titre, DateTime dateP)
         {
             bool Result;
@@ -112,6 +166,26 @@ namespace DllBddEditeur
             }
             catch { Result = false; }
             return Result;
+        }
+        public bool DeleteBook(string isbn)
+        {
+            bool result;
+            try
+            {
+                Booklist livre = bdd.Booklists.FirstOrDefault(b => b.ISBN == isbn);
+                if (livre != null)
+                {
+                    bdd.Booklists.DeleteOnSubmit(livre);
+                    bdd.SubmitChanges();
+                    result = true;
+                }
+                else
+                {
+                    result = false;
+                }
+            }
+            catch{ result = false;}
+            return result;
         }
         public List<Booklist> getBooksOfAuthor(String nom, String prenom)
         {

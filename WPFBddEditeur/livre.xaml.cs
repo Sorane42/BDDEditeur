@@ -23,6 +23,7 @@ namespace WPFBddEditeur
     public partial class livre : UserControl
     {
         private BddEditeur bdd = null;
+       
         public livre()
         {
             InitializeComponent();
@@ -32,9 +33,6 @@ namespace WPFBddEditeur
                 bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
                 List<Booklist> listeLivre = bdd.getallBooks();
                 bookDataGrid.ItemsSource = listeLivre;
-
-
-
 
             }
             catch (Exception ex)
@@ -62,23 +60,38 @@ namespace WPFBddEditeur
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Erreur lors de selection de personnel");
+                MessageBox.Show(ex.Message, "Erreur lors de la selection");
             }
         }
 
         private void delBook_Click(object sender, RoutedEventArgs e)
         {
-            
+            Booklist bookToDel = (Booklist)bookDataGrid.SelectedItem;
+
+            if (bookToDel != null)
+            {  
+                string isbn = bookToDel.ISBN;
+                bool result = bdd.DeleteBook(isbn);       
+                if (result)
+                {
+                    MessageBox.Show("Le livre a été supprimé avec succès.");
+                }
+                else
+                {
+                    MessageBox.Show("Une erreur est survenue lors de la suppression du livre.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez sélectionner un livre à supprimer.");
+            }
         }
 
-        private void modifyBook_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void addBook_Click(object sender, RoutedEventArgs e)
         {
-
+            addBook addBook = new addBook();
+            addBook.Show();
         }
     }
 }

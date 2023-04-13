@@ -37,15 +37,16 @@ namespace WPFBddEditeur
             prixContent = new PrixContent();
             try
             {
-                //bdd = new BddEditeur(Properties.Settings.Default.AdrIpServeur, Properties.Settings.Default.Port, Properties.Settings.Default.Utilisateur, Properties.Settings.Default.Mdp);
-                bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
+                bdd = new BddEditeur(Properties.Settings.Default.AdrIpServeur, Properties.Settings.Default.Port, Properties.Settings.Default.Utilisateur, Properties.Settings.Default.Mdp);
+                //bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
+                
                 List<Bookauthor> listeAuteurs = bdd.getallAuthors();
 
                
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Erreur lors de la connexion à la Bdd");
+                MessageBox.Show(ex.Message, "Erreur lors de la connexion à la bdd");
                 
             }
             mainContent.Content = loginContent;
@@ -66,7 +67,6 @@ namespace WPFBddEditeur
 
         private void authorBt_Click(object sender, RoutedEventArgs e)
         {
-
             mainContent.Content = auteurContent;
         }
 
@@ -80,19 +80,6 @@ namespace WPFBddEditeur
             this.Close();  
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-
-        }
+      
     }
 }

@@ -16,24 +16,23 @@
             </Grid.RowDefinitions>
             <Label FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Content="Liste des Livres"/>
 
-            <DataGrid HorizontalAlignment="Left" Height="244" Margin="25,31,0,0" Grid.Row="1" VerticalAlignment="Top" Width="350" x:Name="bookDataGrid"  AutoGenerateColumns="False" >
+            <DataGrid HorizontalAlignment="Left" Height="244" Margin="25,31,0,0" Grid.Row="1" VerticalAlignment="Top" Width="350" x:Name="bookDataGrid"  AutoGenerateColumns="False" SelectionChanged="bookDataGrid_SelectionChanged" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Titre"  Binding="{Binding Title}" Width="150"/>
-                    <DataGridTextColumn Header="ISBN" Binding="{Binding ISBN}" Width="150"/>
-                    <DataGridTextColumn Header="Prix" Binding="{Binding Price}" Width="50"/>
+                    <DataGridTextColumn Header="Titre"  Binding="{Binding Title}" Width="175"/>
+                    <DataGridTextColumn Header="ISBN" Binding="{Binding ISBN}" Width="175"/>
+
 
                 </DataGrid.Columns>
             </DataGrid>
-            <TextBox x:Name="titreBox" HorizontalAlignment="Left" Height="23" Margin="445,31,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="224"/>
-            <TextBox x:Name="isbnBox" HorizontalAlignment="Left" Height="23" Margin="445,59,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="224" RenderTransformOrigin="0.533,2.448"/>
-            <Label Content="Titre :" HorizontalAlignment="Left" Margin="380,31,0,0" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="23" RenderTransformOrigin="0.542,-0.96"/>
-            <Label Content="ISBN :&#xA;" HorizontalAlignment="Left" Margin="380,59,0,0" Grid.Row="1" VerticalAlignment="Top" Width="70" Height="23"/>
-            <Label Content="Prix mini :" HorizontalAlignment="Left" Margin="380,87,0,0" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="23"/>
-            <Label Content="Prix max :" HorizontalAlignment="Left" Margin="527,87,0,0" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="23"/>
-            <TextBox x:Name="isbnBox_Copy" HorizontalAlignment="Left" Height="23" Margin="445,87,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.533,2.448"/>
+            <TextBox x:Name="canTb" HorizontalAlignment="Left" Height="23" Margin="463,59,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="224"/>
+            <TextBox x:Name="usdTb" HorizontalAlignment="Left" Height="23" Margin="463,101,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="224" RenderTransformOrigin="0.533,2.448"/>
+            <Label Content="Prix en CAN :" HorizontalAlignment="Left" Margin="380,59,0,0" Grid.Row="1" VerticalAlignment="Top" Width="78" Height="23" RenderTransformOrigin="0.542,-0.96"/>
+            <Label Content="Prix en USD :&#xA;" HorizontalAlignment="Left" Margin="380,101,0,0" Grid.Row="1" VerticalAlignment="Top" Width="78" Height="23"/>
+            <Label Content="Prix en GBP :&#xA;" HorizontalAlignment="Left" Margin="380,142,0,0" Grid.Row="1" VerticalAlignment="Top" Width="83" Height="23"/>
+            <TextBox x:Name="gbpTb" HorizontalAlignment="Left" Height="23" Margin="463,142,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="224" RenderTransformOrigin="0.533,2.448"/>
+            <Label Content="Prix" HorizontalAlignment="Left" Margin="553,22,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20"/>
 
 
         </Grid>
-        <TextBox x:Name="isbnBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="591,151,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="77" RenderTransformOrigin="0.533,2.448"/>
     </Grid>
 </UserControl>

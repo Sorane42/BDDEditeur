@@ -50,7 +50,8 @@ namespace WPFBddEditeur
 
         private void addUser_Click(object sender, RoutedEventArgs e)
         {
-
+            addUser addUser = new addUser();
+            addUser.Show();
         }
 
         private void modifyUser_Click(object sender, RoutedEventArgs e)
@@ -60,7 +61,24 @@ namespace WPFBddEditeur
 
         private void delUser_Click(object sender, RoutedEventArgs e)
         {
-
+            User userToDel = (User)userDataGrid.SelectedItem;
+            if (userToDel != null)
+            {
+                string login = userToDel.Login;
+                bool result = bdd.DeleteUser(login);
+                if (result)
+                {
+                    MessageBox.Show("L'utilisateur a été supprimé avec succès.");
+                }
+                else
+                {
+                    MessageBox.Show("Une erreur est survenue lors de la suppression de l'utilisateur.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez sélectionner un utilisateur à supprimer.");
+            }
         }
     }
 }

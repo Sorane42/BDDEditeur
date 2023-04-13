@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFBddEditeur"
         mc:Ignorable="d"
-        Title="addAuthor" Height="450" Width="800">
+        Title="Ajout d'un auteur" Height="450" Width="800">
     <Grid>
         <Button  x:Name="addBt" Content="Ajouter" HorizontalAlignment="Left" Margin="341,270,0,0" VerticalAlignment="Top" Width="112" Height="41" Click="addBt_Click"/>
         <Button x:Name="cancelBt" Content="Retour" HorizontalAlignment="Left" Margin="641,350,0,0" VerticalAlignment="Top" Width="112" Height="40" Click="cancelBt_Click"/>

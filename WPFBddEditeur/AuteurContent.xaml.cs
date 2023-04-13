@@ -30,18 +30,14 @@ namespace WPFBddEditeur
 
             try
             {
-               
                 bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
                 List<Bookauthor> listeAuteurs = bdd.getallAuthors();
                 auteurDataGrid.ItemsSource = listeAuteurs;
 
-
-
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Erreur lors de la connexion à la Bddd");
+                MessageBox.Show(ex.Message, "Erreur lors de la connexion à la Bdd");
             }
         }
 
@@ -65,20 +61,8 @@ namespace WPFBddEditeur
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Erreur lors de selection de personnel");
+                MessageBox.Show(ex.Message, "Erreur lors de la selection");
             }
-        }
-
-       
-
-        private void delAuthor_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void modifyAuthor_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void addAuthor_Click(object sender, RoutedEventArgs e)
@@ -86,5 +70,6 @@ namespace WPFBddEditeur
             addAuthor addAuthor = new addAuthor();
             addAuthor.Show();
         }
+
     }
 }

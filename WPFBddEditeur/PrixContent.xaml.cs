@@ -26,18 +26,26 @@ namespace WPFBddEditeur
         public PrixContent()
         {
             InitializeComponent();
+           
+                
             try
             {
                 //bdd = new BddEditeur(Properties.Settings.Default.AdrIpServeur, Properties.Settings.Default.Port, Properties.Settings.Default.Utilisateur, Properties.Settings.Default.Mdp);
                 bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
+                List<Booklist> listeLivre = bdd.getallBooks();
+                bookDataGrid.ItemsSource = listeLivre;
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Erreur lors de la connexion à la Bdd");
             }
+
         }
 
-       
+        private void bookDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

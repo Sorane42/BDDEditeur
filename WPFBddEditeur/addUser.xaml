@@ -1,0 +1,24 @@
+﻿<Window x:Class="WPFBddEditeur.addUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFBddEditeur"
+        mc:Ignorable="d"
+        Title="Ajout d'un utilisateur" Height="450" Width="800">
+    <Grid>
+        <Button  x:Name="addBt" Content="Ajouter" HorizontalAlignment="Left" Margin="341,270,0,0" VerticalAlignment="Top" Width="112" Height="41" Click="addBt_Click"/>
+        <Button x:Name="cancelBt" Content="Retour" HorizontalAlignment="Left" Margin="641,350,0,0" VerticalAlignment="Top" Width="112" Height="40" Click="cancelBt_Click"/>
+        <TextBox x:Name="firstNameTb" HorizontalAlignment="Left" Height="22" Margin="398,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+        <TextBox x:Name="lastNameTb" HorizontalAlignment="Left" Height="22" Margin="398,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+        <Label HorizontalAlignment="Left" Margin="278,138,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nom :" HorizontalAlignment="Left" Margin="299,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.974,-0.692"/>
+        <Label Content="Prénom :" HorizontalAlignment="Left" Margin="299,138,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.974,-0.692"/>
+        <Label Content="Login :" HorizontalAlignment="Left" Margin="299,182,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.974,-0.692"/>
+        <Label Content="Ajout d'un utilisateur" HorizontalAlignment="Left" Margin="316,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.974,-0.692" Width="193" FontSize="20"/>
+        <TextBox x:Name="loginTb" HorizontalAlignment="Left" Height="22" Margin="398,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+        <TextBox x:Name="mdpTb" HorizontalAlignment="Left" Height="22" Margin="398,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+        <Label Content="Mot de passe :" HorizontalAlignment="Left" Margin="299,228,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.974,-0.692"/>
+
+    </Grid>
+</Window>

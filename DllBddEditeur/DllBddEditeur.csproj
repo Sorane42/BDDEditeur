@@ -1,19 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Devart.Data.MySql.Linq" Version="5.0.0" />
+    <PackageReference Include="Devart.Data.Linq" Version="5.0.134" />
+    <PackageReference Include="Devart.Data.MySql.Linq" Version="5.0.134" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="DataContext1.Designer.cs">
+    <Compile Update="DataContext.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>DataContext1.lqml</DependentUpon>
+      <DependentUpon>DataContext.lqml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -21,17 +22,17 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="DataContext1.Diagram1.view">
+    <None Update="DataContext.Diagram1.view">
       <AutoGen>True</AutoGen>
-      <DependentUpon>DataContext1.lqml</DependentUpon>
+      <DependentUpon>DataContext.lqml</DependentUpon>
     </None>
-    <None Update="DataContext1.edps">
+    <None Update="DataContext.edps">
       <AutoGen>True</AutoGen>
-      <DependentUpon>DataContext1.lqml</DependentUpon>
+      <DependentUpon>DataContext.lqml</DependentUpon>
     </None>
-    <None Update="DataContext1.lqml">
+    <None Update="DataContext.lqml">
       <Generator>DevartLinqToSqlGenerator</Generator>
-      <LastGenOutput>DataContext1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataContext.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

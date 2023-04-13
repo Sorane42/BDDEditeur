@@ -1,0 +1,22 @@
+﻿<Window x:Class="WPFBddEditeur.addBook"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFBddEditeur"
+        mc:Ignorable="d"
+        Title="Ajout d'un livre" Height="450" Width="800">
+    <Grid>
+        <Button  x:Name="addBt" Content="Ajouter" HorizontalAlignment="Left" Margin="341,270,0,0" VerticalAlignment="Top" Width="112" Height="41" Click="addBt_Click"/>
+        <Button x:Name="cancelBt" Content="Retour" HorizontalAlignment="Left" Margin="641,350,0,0" VerticalAlignment="Top" Width="112" Height="40" Click="cancelBt_Click"/>
+        <TextBox x:Name="titleTb" HorizontalAlignment="Left" Height="22" Margin="398,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+        <TextBox x:Name="isbnBTb" HorizontalAlignment="Left" Height="22" Margin="398,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+        <Label HorizontalAlignment="Left" Margin="278,138,0,0" VerticalAlignment="Top"/>
+        <Label Content="Titre :" HorizontalAlignment="Left" Margin="299,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.974,-0.692"/>
+        <Label Content="ISBN :" HorizontalAlignment="Left" Margin="299,162,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.974,-0.692"/>
+        <Label Content="Date :" HorizontalAlignment="Left" Margin="299,212,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.974,-0.692"/>
+        <Label Content="Ajout d'un livre" HorizontalAlignment="Left" Margin="316,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.974,-0.692" Width="163" FontSize="20"/>
+        <DatePicker Name="dateTb" HorizontalAlignment="Left" Margin="398,214,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

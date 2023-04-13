@@ -13,52 +13,43 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DllBddEditeur;
 using BddediteurContext;
-
 namespace WPFBddEditeur
 {
     /// <summary>
-    /// Logique d'interaction pour addAuthor.xaml
+    /// Logique d'interaction pour addUser.xaml
     /// </summary>
-    public partial class addAuthor : Window
+    public partial class addUser : Window
     {
         private BddEditeur bdd = null;
-        public addAuthor()
+        public addUser()
         {
             InitializeComponent();
-            try
-            {
-                //bdd = new BddEditeur(Properties.Settings.Default.AdrIpServeur, Properties.Settings.Default.Port, Properties.Settings.Default.Utilisateur, Properties.Settings.Default.Mdp);
-                bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Erreur lors de la connexion à la Bdd");
-            }
+            bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
         }
-
 
         private void addBt_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                if(firstNameTb.Text == "" || lastNameTb.Text == "" || isbnTb.Text == "")
+                if (firstNameTb.Text == "" || lastNameTb.Text == "" || loginTb.Text == "" || mdpTb.Text == "")
                 {
                     MessageBox.Show("Tous les champs doivent être remplis");
                     return;
                 }
-                if(bdd.authorExiste(isbnTb.Text) == true)
+                if (bdd.UserExiste(loginTb.Text) == true)
                 {
                     MessageBox.Show("L'auteur existe déjà");
                     return;
                 }
-                if(bdd.addAuthor(firstNameTb.Text,lastNameTb.Text,isbnTb.Text))
+                if (bdd.addUser(firstNameTb.Text, lastNameTb.Text, loginTb.Text, mdpTb.Text))
                 {
-                    bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!"); 
+                    bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
                     MessageBox.Show("Ajout réussi");
                     this.Close();
                 }
-            } catch (Exception ex){
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message, "Erreur lors de l'ajout");
             }
         }
@@ -67,7 +58,5 @@ namespace WPFBddEditeur
         {
             this.Close();
         }
-
-        
     }
 }
