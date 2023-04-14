@@ -30,8 +30,8 @@ namespace WPFBddEditeur
                 
             try
             {
-                //bdd = new BddEditeur(Properties.Settings.Default.AdrIpServeur, Properties.Settings.Default.Port, Properties.Settings.Default.Utilisateur, Properties.Settings.Default.Mdp);
-                bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
+                bdd = new BddEditeur(Properties.Settings.Default.AdrIpServeur, Properties.Settings.Default.Port, Properties.Settings.Default.Utilisateur, Properties.Settings.Default.Mdp);
+                //bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
                 List<Booklist> listeLivre = bdd.getallBooks();
                 bookDataGrid.ItemsSource = listeLivre;
 

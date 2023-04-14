@@ -26,8 +26,10 @@ namespace WPFBddEditeur
         private UserContent userContent;
         private PrixContent prixContent;
         private LoginContent loginContent;
-
-        public MainWindow()
+        private Login login;
+        private string _username;
+        private string _password;
+        public MainWindow(string username, string password)
         {
             InitializeComponent();
             livre = new livre();
@@ -35,24 +37,34 @@ namespace WPFBddEditeur
             userContent = new UserContent();
             loginContent = new LoginContent();
             prixContent = new PrixContent();
+            login = new Login();
             try
             {
                 bdd = new BddEditeur(Properties.Settings.Default.AdrIpServeur, Properties.Settings.Default.Port, Properties.Settings.Default.Utilisateur, Properties.Settings.Default.Mdp);
                 //bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
-                
-                List<Bookauthor> listeAuteurs = bdd.getallAuthors();
 
-               
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Erreur lors de la connexion à la bdd");
                 
             }
-            mainContent.Content = loginContent;
+            mainContent.Content = auteurContent;
+
+            _username = username;
+            _password = password;
+            
+            if (!bdd.GetPermission(_username, _password))
+            {
+                
+                userBt.ToolTip = "Vous n'avez pas la permission d'accéder à cet écran";
+                userBt.IsEnabled = false;
+                
+            }
+
         }
 
-        
+       
 
         private void userBt_Click(object sender, RoutedEventArgs e)
         {
@@ -77,7 +89,9 @@ namespace WPFBddEditeur
 
         private void logoutBt_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();  
+            Login login = new Login();
+            login.Show();
+            this.Close();
         }
 
       

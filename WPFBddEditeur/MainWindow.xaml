@@ -22,7 +22,12 @@
 				<RowDefinition/>
 			</Grid.RowDefinitions>
 
-			<Button Name="userBt"  FontSize="20" Grid.Row="0" Click="userBt_Click">Utilisateurs</Button>
+            <Button Name="userBt"  FontSize="20" Grid.Row="0" Click="userBt_Click"  >
+                <Button.ToolTip>
+                    Uniquement accéssible par un Gestionnaire
+                </Button.ToolTip>
+                Utilisateurs
+            </Button>
 			<Button Name="bookBt" FontSize="20" Grid.Row="1" Click="bookBt_Click">Livres</Button>
 			<Button Name="authorBt" FontSize="20" Grid.Row="2" Click="authorBt_Click">Auteurs</Button>
 			<Button Name="priceBt" FontSize="20" Grid.Row="3" Click="priceBt_Click">Prix</Button>

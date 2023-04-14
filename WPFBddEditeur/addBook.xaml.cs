@@ -46,7 +46,13 @@ namespace WPFBddEditeur
                     MessageBox.Show("Le livre existe déjà");
                     return;
                 }
-               
+                if (bdd.AddBook(titleTb.Text, isbnBTb.Text, dateTb.SelectedDate))
+                {
+                    bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
+                    MessageBox.Show("Ajout réussi");
+                    this.Close();
+                }
+
             }
             catch (Exception ex)
             {

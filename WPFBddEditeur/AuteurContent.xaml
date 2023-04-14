@@ -7,6 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        
         <Grid>
 
             <Grid.RowDefinitions>
@@ -16,11 +17,11 @@
             </Grid.RowDefinitions>
             <Label FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0">Liste des Auteurs</Label>
             <Button Name="addUserBt" Content="Ajouter"   Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="118" Height="30" Click="addAuthor_Click" RenderTransformOrigin="1.11,0.433"/>
-            <DataGrid HorizontalAlignment="Left" Height="244" Margin="25,31,0,0" Grid.Row="1" VerticalAlignment="Top" Width="350" x:Name="auteurDataGrid"  AutoGenerateColumns="False" SelectionChanged="getListeAuteur">
+            <DataGrid IsReadOnly ="True" HorizontalAlignment="Left" Height="244" Margin="25,31,0,0" Grid.Row="1" VerticalAlignment="Top" Width="350" x:Name="auteurDataGrid"  AutoGenerateColumns="False" SelectionChanged="getListeAuteur">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Prénom"  Binding="{Binding FirstName}" Width="175"/>
                     <DataGridTextColumn Header="Nom" Binding="{Binding LastName}" Width="175"/>
-
+                
                 </DataGrid.Columns>
             </DataGrid>
             <TextBox x:Name="nomBox" HorizontalAlignment="Left" Height="23" Margin="445,31,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="224"/>
@@ -29,7 +30,7 @@
             <Label Content="Nom :&#xD;&#xA;" HorizontalAlignment="Left" Margin="380,31,0,0" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="23" RenderTransformOrigin="0.542,-0.96"/>
             <Label Content="Prénom :&#xA;Prénom&#xD;&#xA;" HorizontalAlignment="Left" Margin="380,59,0,0" Grid.Row="1" VerticalAlignment="Top" Width="70" Height="23"/>
             <Label Content="ISBN :&#xA;" HorizontalAlignment="Left" Margin="380,87,0,0" Grid.Row="1" VerticalAlignment="Top" Width="60" Height="23"/>
-            <DataGrid HorizontalAlignment="Left" Height="160" Margin="380,115,0,0" Grid.Row="1" VerticalAlignment="Top" Width="289" x:Name="livreDataGrid"  AutoGenerateColumns="False" >
+            <DataGrid IsReadOnly ="True" HorizontalAlignment="Left" Height="160" Margin="380,115,0,0" Grid.Row="1" VerticalAlignment="Top" Width="289" x:Name="livreDataGrid"  AutoGenerateColumns="False" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ISBN"  Binding="{Binding ISBN}" Width="70"/>
                     <DataGridTextColumn Header="Titre" Binding="{Binding Title}" Width="100"/>

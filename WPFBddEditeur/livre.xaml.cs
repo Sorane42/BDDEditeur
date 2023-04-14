@@ -29,8 +29,8 @@ namespace WPFBddEditeur
             InitializeComponent();
             try
             {
-                //bdd = new BddEditeur(Properties.Settings.Default.AdrIpServeur, Properties.Settings.Default.Port, Properties.Settings.Default.Utilisateur, Properties.Settings.Default.Mdp);
-                bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
+                bdd = new BddEditeur(Properties.Settings.Default.AdrIpServeur, Properties.Settings.Default.Port, Properties.Settings.Default.Utilisateur, Properties.Settings.Default.Mdp);
+                //bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
                 List<Booklist> listeLivre = bdd.getallBooks();
                 bookDataGrid.ItemsSource = listeLivre;
 
@@ -85,13 +85,24 @@ namespace WPFBddEditeur
             {
                 MessageBox.Show("Veuillez sélectionner un livre à supprimer.");
             }
+
+            List<Booklist> listeLivre = bdd.getallBooks();
+            bookDataGrid.ItemsSource = listeLivre;
         }
 
 
         private void addBook_Click(object sender, RoutedEventArgs e)
         {
             addBook addBook = new addBook();
+            addBook.Closed += AddBook_Closed;
             addBook.Show();
         }
+
+        private void AddBook_Closed(object sender, EventArgs e)
+        {
+            List<Booklist> listeBook = bdd.getallBooks();
+            bookDataGrid.ItemsSource = listeBook;
+        }
+
     }
 }

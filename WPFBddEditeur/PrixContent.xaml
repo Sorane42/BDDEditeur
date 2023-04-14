@@ -16,7 +16,7 @@
             </Grid.RowDefinitions>
             <Label FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Content="Liste des Livres"/>
 
-            <DataGrid HorizontalAlignment="Left" Height="244" Margin="25,31,0,0" Grid.Row="1" VerticalAlignment="Top" Width="350" x:Name="bookDataGrid"  AutoGenerateColumns="False" SelectionChanged="bookDataGrid_SelectionChanged" >
+            <DataGrid IsReadOnly ="True" HorizontalAlignment="Left" Height="244" Margin="25,31,0,0" Grid.Row="1" VerticalAlignment="Top" Width="350" x:Name="bookDataGrid"  AutoGenerateColumns="False" SelectionChanged="bookDataGrid_SelectionChanged" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Titre"  Binding="{Binding Title}" Width="175"/>
                     <DataGridTextColumn Header="ISBN" Binding="{Binding ISBN}" Width="175"/>

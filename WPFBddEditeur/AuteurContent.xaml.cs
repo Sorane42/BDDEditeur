@@ -30,7 +30,8 @@ namespace WPFBddEditeur
 
             try
             {
-                bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
+                bdd = new BddEditeur(Properties.Settings.Default.AdrIpServeur, Properties.Settings.Default.Port, Properties.Settings.Default.Utilisateur, Properties.Settings.Default.Mdp);
+                //bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
                 List<Bookauthor> listeAuteurs = bdd.getallAuthors();
                 auteurDataGrid.ItemsSource = listeAuteurs;
 
@@ -68,8 +69,14 @@ namespace WPFBddEditeur
         private void addAuthor_Click(object sender, RoutedEventArgs e)
         {
             addAuthor addAuthor = new addAuthor();
+            addAuthor.Closed += AddAuthor_Closed;
             addAuthor.Show();
         }
 
+        private void AddAuthor_Closed(object sender, EventArgs e)
+        {
+            List<Bookauthor> listeAuthor = bdd.getallAuthors();
+            auteurDataGrid.ItemsSource = listeAuthor;
+        }
     }
 }

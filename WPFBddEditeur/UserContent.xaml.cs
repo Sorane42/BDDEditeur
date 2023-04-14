@@ -30,10 +30,10 @@ namespace WPFBddEditeur
 
             try
             {
-                //bdd = new BddEditeur(Properties.Settings.Default.AdrIpServeur, Properties.Settings.Default.Port, Properties.Settings.Default.Utilisateur, Properties.Settings.Default.Mdp);
-                bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
-                List<Bookauthor> listeAuteurs = bdd.getallAuthors();
-                userDataGrid.ItemsSource = listeAuteurs;
+                bdd = new BddEditeur(Properties.Settings.Default.AdrIpServeur, Properties.Settings.Default.Port, Properties.Settings.Default.Utilisateur, Properties.Settings.Default.Mdp);
+                //bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
+                List<User> listerUsers = bdd.getallUsers();
+                userDataGrid.ItemsSource = listerUsers;
 
 
             }
@@ -51,7 +51,15 @@ namespace WPFBddEditeur
         private void addUser_Click(object sender, RoutedEventArgs e)
         {
             addUser addUser = new addUser();
+            addUser.Closed += AddUser_Closed;
             addUser.Show();
+            
+        }
+
+        private void AddUser_Closed(object sender, EventArgs e)
+        {
+            List<User> listerUsers = bdd.getallUsers();
+            userDataGrid.ItemsSource = listerUsers;
         }
 
         private void modifyUser_Click(object sender, RoutedEventArgs e)
@@ -79,6 +87,8 @@ namespace WPFBddEditeur
             {
                 MessageBox.Show("Veuillez sélectionner un utilisateur à supprimer.");
             }
+            List<User> listerUsers = bdd.getallUsers();
+            userDataGrid.ItemsSource = listerUsers;
         }
     }
 }

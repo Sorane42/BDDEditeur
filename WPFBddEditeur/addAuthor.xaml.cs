@@ -21,14 +21,17 @@ namespace WPFBddEditeur
     /// </summary>
     public partial class addAuthor : Window
     {
+        private AuteurContent auteurContent;
+
         private BddEditeur bdd = null;
         public addAuthor()
         {
             InitializeComponent();
+            auteurContent = new AuteurContent();
             try
             {
-                //bdd = new BddEditeur(Properties.Settings.Default.AdrIpServeur, Properties.Settings.Default.Port, Properties.Settings.Default.Utilisateur, Properties.Settings.Default.Mdp);
-                bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
+                bdd = new BddEditeur(Properties.Settings.Default.AdrIpServeur, Properties.Settings.Default.Port, Properties.Settings.Default.Utilisateur, Properties.Settings.Default.Mdp);
+                //bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
 
             }
             catch (Exception ex)
@@ -54,13 +57,17 @@ namespace WPFBddEditeur
                 }
                 if(bdd.addAuthor(firstNameTb.Text,lastNameTb.Text,isbnTb.Text))
                 {
-                    bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!"); 
+                    bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
+                    List<Bookauthor> listeAuteurs = bdd.getallAuthors();
+                    auteurContent.auteurDataGrid.ItemsSource = listeAuteurs;
                     MessageBox.Show("Ajout réussi");
+                    
                     this.Close();
                 }
             } catch (Exception ex){
                 MessageBox.Show(ex.Message, "Erreur lors de l'ajout");
             }
+
         }
 
         private void cancelBt_Click(object sender, RoutedEventArgs e)

@@ -152,7 +152,7 @@ namespace DllBddEditeur
             catch{result = false;}
             return result;
         }
-        public bool AddBook(string isb, string titre, DateTime dateP)
+        public bool AddBook(string isb, string titre, DateTime? dateP)
         {
             bool Result;
             try
@@ -162,6 +162,7 @@ namespace DllBddEditeur
                 livre.Title = titre;
                 livre.PublicationDate = dateP;
                 bdd.Booklists.InsertOnSubmit(livre);
+                bdd.SubmitChanges();
                 Result = true;
             }
             catch { Result = false; }
@@ -209,7 +210,20 @@ namespace DllBddEditeur
             }
             return listeLivre;
         }
+        public bool GetPermission(string username, string password)
+         {
+            List<User> users = getallUsers();
+            var user = users.FirstOrDefault(u => u.Login == username && u.Mdp == password);
 
+        if (user != null)
+        {
+            return user.Autorisation;
+        }
+        return false;
+         }
        
     }
+
+    
+
 }
