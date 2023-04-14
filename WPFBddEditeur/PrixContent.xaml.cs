@@ -32,7 +32,7 @@ namespace WPFBddEditeur
             {
                 bdd = new BddEditeur(Properties.Settings.Default.AdrIpServeur, Properties.Settings.Default.Port, Properties.Settings.Default.Utilisateur, Properties.Settings.Default.Mdp);
                 //bdd = new BddEditeur("127.0.0.1", "3306", "AdminEditeur", "@Password1234!");
-                List<Booklist> listeLivre = bdd.getallBooks();
+                List<Bookprice> listeLivre = bdd.GetBookprices();
                 bookDataGrid.ItemsSource = listeLivre;
 
             }
@@ -45,7 +45,23 @@ namespace WPFBddEditeur
 
         private void bookDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            try
+            {
+                if (sender is DataGrid)
+                {
+                    Bookprice bp = (Bookprice)(sender as DataGrid).SelectedItem;
+                    if (bp != null)
+                    {
+                        this.prixTb.Text = bp.Price.ToString();
+                        
+                    }
 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erreur lors de la selection");
+            }
         }
     }
 }

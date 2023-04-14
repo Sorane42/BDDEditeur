@@ -93,6 +93,9 @@
     <Compile Include="LoginContent.xaml.cs">
       <DependentUpon>LoginContent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="modifyUser.xaml.cs">
+      <DependentUpon>modifyUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PrixContent.xaml.cs">
       <DependentUpon>PrixContent.xaml</DependentUpon>
     </Compile>
@@ -139,6 +142,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="modifyUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PrixContent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

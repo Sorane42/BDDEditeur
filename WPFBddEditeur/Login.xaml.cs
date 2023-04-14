@@ -69,5 +69,10 @@ namespace WPFBddEditeur
                 MessageBox.Show(ex.Message, "Login incorrect");
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

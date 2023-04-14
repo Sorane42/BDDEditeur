@@ -21,7 +21,7 @@ namespace WPFBddEditeur
     {
         private BddEditeur bdd = null;
         private AuteurContent auteurContent;
-        private MainWindow mainWindow = null;
+        
 
         public LoginContent()
         {

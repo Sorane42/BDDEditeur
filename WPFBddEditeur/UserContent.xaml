@@ -18,7 +18,7 @@
             <Button Name="addUserBt" Content="Ajouter" HorizontalAlignment="Left" Margin="512,72,0,0" Grid.Row="1" VerticalAlignment="Top" Width="118" Height="30" Click="addUser_Click"/>
             <Button Name="modUserBt" Content="Modifier" HorizontalAlignment="Left" Margin="512,137,0,0" Grid.Row="1" VerticalAlignment="Top" Width="118" Height="30" Click="modifyUser_Click"/>
             <Button Name="delUserBt" Content="Supprimer"  HorizontalAlignment="Left" Margin="512,205,0,0" Grid.Row="1" VerticalAlignment="Top" Width="118" Height="30" Click="delUser_Click" RenderTransformOrigin="-0.164,0.426"/>
-            <DataGrid IsReadOnly ="True" HorizontalAlignment="Left" Height="244" Margin="25,31,0,0" Grid.Row="1" VerticalAlignment="Top" Width="390" x:Name="userDataGrid"  AutoGenerateColumns="False" SelectionChanged="getListeUser">
+            <DataGrid IsReadOnly ="True" HorizontalAlignment="Left" Height="244" Margin="25,31,0,0" Grid.Row="1" VerticalAlignment="Top" Width="390" x:Name="userDataGrid"  AutoGenerateColumns="False">
                 <DataGrid.Columns>
 
                     <DataGridTextColumn Header="Nom" Binding="{Binding Nom}" Width="130"/>

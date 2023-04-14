@@ -221,9 +221,36 @@ namespace DllBddEditeur
         }
         return false;
          }
-       
+
+        public bool ModifyUser(string oldLogin, string newNom, string newPrenom, string newLogin)
+        {
+            try
+            {
+                User userToModify = bdd.Users.FirstOrDefault(u => u.Login == oldLogin);
+
+                if (userToModify != null)
+                {
+                    userToModify.Nom = newNom;
+                    userToModify.Prenom = newPrenom;
+                    userToModify.Login = newLogin;
+                    
+                    bdd.SubmitChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
     }
 
-    
+
 
 }

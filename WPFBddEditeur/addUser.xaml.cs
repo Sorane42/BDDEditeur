@@ -38,7 +38,7 @@ namespace WPFBddEditeur
                 }
                 if (bdd.UserExiste(loginTb.Text) == true)
                 {
-                    MessageBox.Show("L'auteur existe déjà");
+                    MessageBox.Show("Cet utilisateur existe déjà");
                     return;
                 }
                 if (bdd.addUser(firstNameTb.Text, lastNameTb.Text, loginTb.Text, mdpTb.Text))

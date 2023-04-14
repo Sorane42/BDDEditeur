@@ -43,10 +43,7 @@ namespace WPFBddEditeur
             }
         }
 
-        private void getListeUser(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+     
 
         private void addUser_Click(object sender, RoutedEventArgs e)
         {
@@ -55,16 +52,18 @@ namespace WPFBddEditeur
             addUser.Show();
             
         }
-
+        private void modifyUser_Click(object sender, RoutedEventArgs e)
+        {
+            modifyUser modifyUser = new modifyUser();
+            modifyUser.Closed += AddUser_Closed;
+            
+            modifyUser.Show();
+            
+        }
         private void AddUser_Closed(object sender, EventArgs e)
         {
             List<User> listerUsers = bdd.getallUsers();
             userDataGrid.ItemsSource = listerUsers;
-        }
-
-        private void modifyUser_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void delUser_Click(object sender, RoutedEventArgs e)
@@ -90,5 +89,7 @@ namespace WPFBddEditeur
             List<User> listerUsers = bdd.getallUsers();
             userDataGrid.ItemsSource = listerUsers;
         }
+
+        
     }
 }
