@@ -90,9 +90,6 @@
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LoginContent.xaml.cs">
-      <DependentUpon>LoginContent.xaml</DependentUpon>
-    </Compile>
     <Compile Include="modifyUser.xaml.cs">
       <DependentUpon>modifyUser.xaml</DependentUpon>
     </Compile>
@@ -123,10 +120,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Login.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="LoginContent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

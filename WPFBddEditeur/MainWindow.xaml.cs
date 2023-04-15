@@ -25,7 +25,7 @@ namespace WPFBddEditeur
         private AuteurContent auteurContent;
         private UserContent userContent;
         private PrixContent prixContent;
-        private LoginContent loginContent;
+       
         private Login login;
         private string _username;
         private string _password;
@@ -35,7 +35,7 @@ namespace WPFBddEditeur
             livre = new livre();
             auteurContent = new AuteurContent();
             userContent = new UserContent();
-            loginContent = new LoginContent();
+           
             prixContent = new PrixContent();
             login = new Login();
             try
